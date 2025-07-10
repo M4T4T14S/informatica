@@ -1,0 +1,23 @@
+body {
+  background-color: lightyellow;
+}
+
+h1 {
+  color: darkred;
+}
+
+p {
+  color: black;
+}
+
+a {
+  color: blue;
+}
+
+li {
+  color: green;
+}
+
+img {
+  border: 2px solid gray;
+}
