@@ -1,22 +1,67 @@
-/*Selector de etiqueta*/
-h1{
-    color:red;
+/* selector de etiqueta */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    padding-top: 100px;
 }
-h2{
-    color:blue;
+
+h2 {
+    color: #2980b9;
 }
-/*Selector de clase*/
-.oscuro{
-    background-color: black;
-    color:white;
+
+/* selector de clase */
+.oscuro {
+    background-color: #2c3e50;
+    color: white;
 }
-/*selector ID */
-#Biografía {
-background-color: rgb(26, 92, 89);
-color: rgb(17, 3, 6);
+
+/* selector id */
+#Biografia {
+    background-color: #ecf0f1;  /* gris muy claro */
+    color: #2c3e50;
+    padding: 1rem;
 }
-/*selector ID */
-#Frases {
-background-color: darkgrey;
-color: gold;
+
+/* estilos para nav (barra de menú simple) */
+nav {
+    background-color: #2980b9;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav a {
+    margin: 0 1rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* footer */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin: 0 0.5rem;
+    font-size: 1.8rem;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: #f1c40f;
+}
+
+/* header con imagen que ocupa más espacio */
+header {
+    background-image: url(descarga2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
 }
