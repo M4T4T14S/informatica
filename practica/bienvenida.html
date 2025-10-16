@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenida</title>
+</head>
+<body>
+    <h1 id="saludo"></h1>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get('nombre');
+        const apellido = params.get('apellido');
+        const curso = params.get('curso');
+        const saludo = document.getElementById('saludo');
+        saludo.textContent = `¡Bienvenido/a ${nombre} ${apellido} al curso de ${curso}!`;
+    </script>
+</body>
+</html>

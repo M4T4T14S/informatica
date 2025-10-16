@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - Fiesta</title>
+</head>
+<body>
+    <h1>Confirmar asistencia a la fiesta</h1>
+    <form id="form1">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <br><br>
+        <label>¿Asistirás a la fiesta?</label><br>
+        <input type="radio" id="si" name="asistencia" value="sí" required>
+        <label for="si">Sí</label><br>
+        <input type="radio" id="no" name="asistencia" value="no">
+        <label for="no">No</label><br><br>
+        <button type="submit">Confirmar</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script>
+        const form = document.getElementById('form1');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value.trim();
+            const asistencia = document.querySelector('input[name="asistencia"]:checked').value;
+            const mensaje = document.getElementById('mensaje');
+            if(asistencia === 'sí') {
+                mensaje.textContent = `¡Gracias por confirmar, ${nombre}! Nos vemos en la fiesta`;
+            } else {
+                mensaje.textContent = `¡Qué pena, ${nombre}! Te vamos a extrañar.`;
+            }
+        });
+    </script>
+</body>
+</html>
