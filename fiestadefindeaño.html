@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmar Fiesta</title>
+    <style>
+      
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+            width: 350px;
+            text-align: left;
+        }
+        h1 { text-align: center; color: #333; margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin: 10px 0 5px; color: #444; }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .radio-group { margin: 15px 0; }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: transform 0.2s ease;
+        }
+        button:hover { transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+    <form>
+        <h1>Fiesta de Fin de Año </h1>
+        
+        <label for="nombre">Tu nombre:</label>
+        <input type="text" id="nombre">
+        
+        <div class="radio-group">
+            <label>¿Vas a venir?</label>
+            <input type="radio" name="asistencia" value="si"> Sí, ¡obvio!
+            <br>
+            <input type="radio" name="asistencia" value="no"> No puedo...
+        </div>
+        
+        <button type="button" onclick="confirmar()">Enviar respuesta</button>
+    </form>
+    
+    <script>
+        // --- JavaScript ---
+        function confirmar() {
+            let nombre = document.getElementById('nombre').value;
+
+            if (!nombre) {
+                alert('¡No te olvides de escribir tu nombre!');
+                return;
+            }
+
+            let radioElegido = document.querySelector('input[name="asistencia"]:checked');
+
+            if (!radioElegido) {
+                alert('Por favor, ¡decime si venís o no!');
+                return;
+            }
+
+            let respuesta = radioElegido.value;
+
+            if (respuesta === 'si') {
+                alert(`¡Gracias por confirmar, ${nombre}! ¡Nos vemos en la fiesta!`);
+            } else {
+                alert(`¡Qué pena, ${nombre}! Te vamos a extrañar.`);
+            }
+        }
+    </script>
+</body>
+</html>

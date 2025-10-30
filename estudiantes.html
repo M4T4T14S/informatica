@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro Estudiante</title>
+    <style>
+       
+        body { font-family: sans-serif; background: linear-gradient(135deg, #74ebd5, #ACB6E5); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 25px 30px; border-radius: 8px; width: 350px; text-align: left; }
+        h1 { text-align: center; color: #333; margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin: 10px 0 5px; color: #444; }
+        input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+        button { width: 100%; padding: 12px; background: linear-gradient(135deg, #43e97b, #38f9d7); border: none; border-radius: 8px; color: white; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px; }
+        button:hover { background: linear-gradient(135deg, #38f9d7, #43e97b); }
+        #m { color: #dc3545; font-weight: bold; text-align: center; margin-top: 10px; } /* M = Mensaje de error */
+    </style>
+</head>
+<body>
+
+    <div id="f" class="card">
+        <h1>Datos del Alumno</h1>
+        
+        <label for="n">Nombre:</label>
+        <input type="text" id="n">
+        
+        <label for="a">Apellido:</label>
+        <input type="text" id="a">
+        
+        <label for="c">Curso:</label>
+        <input type="text" id="c">
+        
+        <button type="button" onclick="s()">Ingresar</button>
+        <div id="m"></div>
+    </div>
+
+   
+    <div id="s" class="card" style="text-align: center; display: none;">
+        <h1>¡Bienvenido!</h1>
+        <p id="t" style="color:#555;"></p>
+        <button onclick="document.getElementById('f').style.display='block'; document.getElementById('s').style.display='none';">Volver</button>
+    </div>
+    
+    <script>
+       
+        function s() {
+            const n=document.getElementById('n').value;
+            const a=document.getElementById('a').value;
+            const c=document.getElementById('c').value;
+            const m=document.getElementById('m');
+            
+            m.textContent=''; 
+
+           
+            if (n==='' || a==='' || c==='') {
+                m.textContent='ERROR: Falta llenar.';
+                return;
+            }
+            
+           
+            document.getElementById('f').style.display='none';
+            document.getElementById('s').style.display='block';
+
+            
+            document.getElementById('t').textContent=`Hola ${n} ${a}, bienvenido al curso: ${c}.`;
+        }
+    </script>
+</body>
